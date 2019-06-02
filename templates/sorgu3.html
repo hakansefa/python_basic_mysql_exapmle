@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Show All Data</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <h1>29/05/2019 tarihinde yemek yiyen öğrencilerin ne yedikleri, oda numaraları ve isimleri nelerdir ?</h1>
+
+            <table class="table">
+                <tr>
+                    <th>Öğrenci Adı</th>
+                    <th>Oda Numarası</th>
+                    <th>Ana Yemek</th>
+                      <th>Tatlı</th>
+                      <th>İçecek</th>
+
+                </tr>
+                {% for ui_row in data %}
+                    <tr>
+                        <td>{{ ui_row[0] }}</td>
+                        <td>{{ ui_row[1] }}</td>
+                        <td>{{ ui_row[2] }}</td>
+                        <td>{{ ui_row[3] }}</td>
+                        <td>{{ ui_row[4] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+          <h1><a href="#" onclick="history.go(-1)">Geri Dön</a></h1>
+
+    </div>
+</div>
+</body>
+</html>
